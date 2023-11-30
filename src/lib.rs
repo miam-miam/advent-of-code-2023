@@ -74,9 +74,8 @@ pub fn parse_exec_time(output: &str) -> f64 {
 pub fn current_event_day() -> Option<u8> {
     let now =
         FixedOffset::east_opt(RELEASE_TIMEZONE_OFFSET)?.from_utc_datetime(&Utc::now().naive_utc());
-    // let day = now.day();
-    let day = 1;
-    if now.month() == 11 && (1..=25).contains(&day) {
+    let day = now.day();
+    if now.month() == 12 && (1..=25).contains(&day) {
         Some(day as u8)
     } else {
         None
