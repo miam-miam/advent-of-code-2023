@@ -1,10 +1,9 @@
 use prse::parse;
-use itertools::Itertools;
 
 pub fn part_one(input: &str) -> Option<u32> {
     Some(input.lines().map(|l| {
-        let first = l.chars().find(|c| c.is_digit(10)).unwrap();
-        let last = l.chars().rfind(|c| c.is_digit(10)).unwrap();
+        let first = l.chars().find(char::is_ascii_digit).unwrap();
+        let last = l.chars().rfind(char::is_ascii_digit).unwrap();
         let num: u32 = parse!(format!{"{first}{last}"}, "{}");
         num
     }).sum())
