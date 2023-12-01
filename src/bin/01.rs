@@ -1,11 +1,8 @@
-use prse::parse;
-
 pub fn part_one(input: &str) -> Option<u32> {
     Some(input.lines().map(|l| {
-        let first = l.chars().find(char::is_ascii_digit).unwrap();
-        let last = l.chars().rfind(char::is_ascii_digit).unwrap();
-        let num: u32 = parse!(format!{"{first}{last}"}, "{}");
-        num
+        let first = l.chars().find(char::is_ascii_digit).unwrap() as u32 - '0' as u32;
+        let last = l.chars().rfind(char::is_ascii_digit).unwrap() as u32 - '0' as u32;
+        first * 10 + last
     }).sum())
 }
 
