@@ -71,6 +71,7 @@ fn main() {
         tmp_file_path.to_string_lossy().to_string(),
         "--day".into(),
         args.day.to_string(),
+        "--overwrite".into(),
         "download".into(),
     ]);
 
