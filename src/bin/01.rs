@@ -7,15 +7,15 @@ pub fn part_one(input: &str) -> Option<u32> {
 }
 
 pub fn part_two(input: &str) -> Option<u32> {
-    let mut input = input.replace("one", "one1one");
-    input = input.replace("two", "two2two");
-    input = input.replace("three", "three3three");
-    input = input.replace("four", "four4four");
-    input = input.replace("five", "five5five");
-    input= input.replace("six", "six6six");
-    input = input.replace("seven", "seven7seven");
-    input = input.replace("eight", "eight8eight");
-    input = input.replace("nine", "nine9nine");
+    let mut input = input.replace("one", "o1e");
+    input = input.replace("two", "t2o");
+    input = input.replace("three", "t3e");
+    input = input.replace("four", "f4r");
+    input = input.replace("five", "f5e");
+    input= input.replace("six", "s6x");
+    input = input.replace("seven", "s7n");
+    input = input.replace("eight", "e8t");
+    input = input.replace("nine", "n9e");
     part_one(&input)
 }
 
