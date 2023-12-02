@@ -25,8 +25,8 @@ struct Round(Vec<Cube>);
 
 pub fn part_one(input: &str) -> Option<u32> {
     Some(input.lines().filter_map(|g| {
-        let (game, rounds): (u32, Vec<Round>) = parse!(g, "Game {}: {:; :}");
-        if rounds.into_iter().any(|r| r.0.into_iter().any(|c| {
+        let (game, mut rounds): (u32, _) = parse!(g, "Game {}: {:; :0}");
+        if rounds.any(|r: Result<Round, _>| r.unwrap().0.into_iter().any(|c| {
             let limit = match c.colour {
                 Colour::Red => 12,
                 Colour::Green => 13,
@@ -42,9 +42,9 @@ pub fn part_one(input: &str) -> Option<u32> {
 
 pub fn part_two(input: &str) -> Option<u32> {
     Some(input.lines().map(|g| {
-        let (_game, rounds): (u32, Vec<Round>) = parse!(g, "Game {}: {:; :}");
-        let totals = rounds.into_iter().fold((0, 0, 0), |mut round_totals, r| {
-            let colours = r.0.into_iter().fold((0, 0, 0), |mut acc, c| {
+        let (_game, rounds): (u32, _) = parse!(g, "Game {}: {:; :0}");
+        let totals = rounds.into_iter().fold((0, 0, 0), |mut round_totals, r: Result<Round, _>| {
+            let colours = r.unwrap().0.into_iter().fold((0, 0, 0), |mut acc, c| {
                 match c.colour {
                     Colour::Red => acc.0 = c.count,
                     Colour::Green => acc.1 = c.count,
