@@ -11,6 +11,7 @@ Solutions for [Advent of Code](https://adventofcode.com/) in [Rust](https://www.
 | :---: | :---: | :---: | :---: |
 | [Day 1](https://adventofcode.com/2023/day/1) | [01.rs](src/bin/01.rs) | ⭐ | ⭐ |
 | [Day 2](https://adventofcode.com/2023/day/2) | [02.rs](src/bin/02.rs) | ⭐ | ⭐ |
+| [Day 3](https://adventofcode.com/2023/day/3) | [03.rs](src/bin/03.rs) | ⭐ | ⭐ |
 <!--- advent_readme_stars table --->
 
 ---
