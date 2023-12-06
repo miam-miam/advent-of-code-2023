@@ -10,10 +10,10 @@ struct Range {
 }
 
 #[derive(Parse)]
-#[prse = "{input}-to-{output} map:\n{ranges:\n:}"]
+#[prse = "{_input}-to-{_output} map:\n{ranges:\n:}"]
 struct Map {
-    input: String,
-    output: String,
+    _input: String,
+    _output: String,
     ranges: Vec<Range>
 }
 
