@@ -1,6 +1,5 @@
-use std::collections::HashMap;
 use itertools::Itertools;
-use prse::{Parse, parse, ParseChars, ParseError, try_parse};
+use prse::{Parse, parse, ParseError, try_parse};
 
 #[derive(Parse, Eq, PartialEq, Ord, PartialOrd, Copy, Clone, Hash)]
 #[repr(u8)]
@@ -13,24 +12,6 @@ enum Card {
     Queen = 12,
     #[prse = "J"]
     Jack = 11,
-    #[prse = "T"]
-    Ten = 10,
-    #[prse = "{}"]
-    Num(u8) = 9
-}
-
-
-#[derive(Parse, Eq, PartialEq, Ord, PartialOrd, Copy, Clone, Hash)]
-#[repr(u8)]
-enum Card2 {
-    #[prse = "A"]
-    Ace = 14,
-    #[prse = "K"]
-    King = 13,
-    #[prse = "Q"]
-    Queen = 12,
-    #[prse = "J"]
-    Joker = 0,
     #[prse = "T"]
     Ten = 10,
     #[prse = "{}"]
@@ -95,6 +76,23 @@ pub fn part_one(input: &str) -> Option<usize> {
     }).collect_vec();
     v.sort();
     Some(v.iter().enumerate().map(|(i, h)| (i + 1) * h.bid as usize).sum())
+}
+
+#[derive(Parse, Eq, PartialEq, Ord, PartialOrd, Copy, Clone, Hash)]
+#[repr(u8)]
+enum Card2 {
+    #[prse = "A"]
+    Ace = 14,
+    #[prse = "K"]
+    King = 13,
+    #[prse = "Q"]
+    Queen = 12,
+    #[prse = "J"]
+    Joker = 0,
+    #[prse = "T"]
+    Ten = 10,
+    #[prse = "{}"]
+    Num(u8) = 9
 }
 
 #[derive(Ord, PartialOrd, Eq, PartialEq)]
