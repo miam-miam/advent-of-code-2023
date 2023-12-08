@@ -7,7 +7,7 @@ name = "advent_of_code"
 version = "0.1.0"
 dependencies = [
  "chrono",
- "itertools 0.12.0",
+ "itertools",
  "pico-args",
  "prse",
  "regex",
@@ -167,15 +167,6 @@ dependencies = [
 
 [[package]]
 name = "itertools"
-version = "0.11.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b1c173a5686ce8bfa551b3563d0c2170bf24ca44da99c7ca4bfdab5418c3fe57"
-dependencies = [
- "either",
-]
-
-[[package]]
-name = "itertools"
 version = "0.12.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "25db6b064527c5d482d0423354fcd07a89a2dfe07b67892e62411946db7f07b0"
@@ -254,20 +245,21 @@ dependencies = [
 
 [[package]]
 name = "prse"
-version = "1.0.3"
+version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b47e2820234e4ea9fdc800ce39fa83b5679fc54f85f0f737bfd5e35106e77a80"
+checksum = "f8a643f07d053e44ad7791451e0bf887825f87da249804a9a84f53702375a994"
 dependencies = [
+ "memchr",
  "prse-derive",
 ]
 
 [[package]]
 name = "prse-derive"
-version = "1.0.3"
+version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f1dff30c410ee2d42edfdeb1911b2d04168ab100e0c94902134884bd6edc3d02"
+checksum = "e3490397346dfb5a6723f25843568bb9d8d5b5da2397a6d574ebc948a1d80cd1"
 dependencies = [
- "itertools 0.11.0",
+ "itertools",
  "proc-macro2",
  "quote",
  "syn 2.0.39",
