@@ -13,7 +13,7 @@ jobs:
               if: ${{ env.AOC_ENABLED }}
               env:
                   AOC_ENABLED: ${{ secrets.AOC_ENABLED }}
-            - uses: miam-miam100/advent-readme-stars@v2
+            - uses: miam-miam/advent-readme-stars@v2
               if: ${{ env.AOC_ENABLED }}
               env:
                   AOC_ENABLED: ${{ secrets.AOC_ENABLED }}
